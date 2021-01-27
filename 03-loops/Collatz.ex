@@ -2,6 +2,7 @@ defmodule Collatz do
   def coll(n)  when is_integer(n)  and n > 0 do
     cond do
       n == 1 -> IO.puts("#{n}")
+      0
       rem(n, 2) == 1 -> IO.puts("#{n}")
         1 + coll(n * 3 + 1)
       rem(n, 2) == 0 -> IO.puts("#{n}")
