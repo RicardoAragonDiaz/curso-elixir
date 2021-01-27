@@ -27,3 +27,19 @@ IO.puts (map2 == map) # false
 
 map3 = Map.put(map2, :c, false) #%{2 => "hello", :a => 5, :c => false, true => :ok}
 IO.puts (map2 == map3) #false
+
+#%{map | :c => "bye"} ##Throws a KeyError because :c nopt int map
+map4 =  %{map | :a => "bye"} # %{2 => "hello", :a => "bye", true => :ok}
+IO.puts (map4 == map) # false
+
+# if the key is an atom
+IO.puts map.a # 5
+IO.puts map[:a] # 5
+users = [
+  frank: %{lastname: "Moreno", contry: "Peru"},
+  #frank: %{:lastname => "moreno", :contry => "peru"}
+  juan: %{lastname: "Meza", contry: "Colombia"}
+]
+
+IO.puts users[:frank].lastname # Moreno
+# users.frank # Thorws a Argument Error
