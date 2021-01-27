@@ -54,7 +54,6 @@ defmodule Loop do
   #  :ok
   #end
 
-
 end
 
 #Loop.for_loopCase(0, 3, "Hola")
