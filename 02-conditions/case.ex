@@ -22,3 +22,4 @@ case a do
    # IO.puts " Resu = result (as value): #{result}"
   end
   IO.puts "result (as value): #{result}"
+# ----
