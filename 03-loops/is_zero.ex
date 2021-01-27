@@ -9,7 +9,6 @@ defmodule Zero do
   def is_zero(n) when is_integer(n) do
     false
   end
-
 end
 
 IO.puts Zero.is_zero(0)
