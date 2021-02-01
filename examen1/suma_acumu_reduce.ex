@@ -1,12 +1,12 @@
 defmodule SumaAcumReduce do
-  def sumA(list) when is_list(list), do: sumaAcum(list, &(&1 + &2))
+  def sumA(list) when is_list(list), do: reduce(list, &(&1 + &2))
 
-  def sumaAcum(list, transform) when is_list(list) and is_function(transform,2) do
-    sumaAcump(list, [], 0, transform)
+  def reduce(list, transform) when is_list(list) and is_function(transform,2) do
+    reducep(list, [], 0, transform)
   end
 
-  defp sumaAcump([], acc, _, _), do: acc
-  defp sumaAcump([h | t], acc, aux, transform), do: sumaAcump(t, acc ++ [transform.(aux, h)], aux + h, transform)
+  defp reducep([], acc, _, _), do: acc
+  defp reducep([h | t], acc, aux, transform), do: reducep(t, acc ++ [transform.(aux, h)], aux + h, transform)
 
 end
 
