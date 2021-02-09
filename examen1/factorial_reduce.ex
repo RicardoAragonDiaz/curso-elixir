@@ -1,10 +1,10 @@
 defmodule FactorialReduce do
 
-  def factReduc(n) when is_integer(n) and n >= 0, do: reduce(n, 0, 1,  &(&1 * (&2 + 1)))
+  def factReduc(n) when is_integer(n) and n >= 0, do: reduce(n, 1,  &(&1 * (&2 + 1)))
 
-  def reduce(n, i, acc, action) when is_integer(n) and is_function(action,2), do: reducep(n, i, acc, action)
-  defp reducep(n, i, acc, _) when i == n, do: acc
-  defp reducep(n, i, acc, action), do: reducep(n, (i + 1), action.(acc, i), action)
+  def reduce(n,  acc, action) when is_integer(n) and is_function(action,2), do: reducep(n,  acc, action)
+  defp reducep(n, acc, _) when n == 0, do: acc
+  defp reducep(n, acc, action), do: reducep(n - 1, action.(acc, n - 1), action)
 
 end
 

@@ -3,7 +3,7 @@ defmodule Descendant do
   def is_descendant?(list) when is_list(list), do:  is_descendantp?(nil, list)
   defp is_descendantp?(_, []), do: true
   defp is_descendantp?(nil, [h | tail]), do: is_descendantp?(h, tail)
-  defp is_descendantp?(aux, [h | tail]) when aux >= h, do: is_descendantp?(h, tail)
+  defp is_descendantp?(aux, [h | tail]) when h < aux, do: is_descendantp?(h, tail)
   defp is_descendantp?(_, _), do: false
 end
 

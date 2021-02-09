@@ -1,12 +1,13 @@
 defmodule FibonacciReduce do
-  def fiboReduc(n) when is_integer(n) and n > 0, do: reduce(n, 1, 0, &(&1 + &2))
 
-  def reduce(n, v1, v2, action) when is_integer(n) and is_function(action,2), do: reducep(n, v1, v2, action)
+  def fiboReduc(list) when is_list(list), do: reduce(list, 0, )
 
-  defp reducep(0, _, v2, _), do: v2
-  defp reducep(1, v1, _, _), do: v1
-  defp reducep(n, v1, v2, action) when n > 1, do: reducep(n - 1, action.(v1, v2), v1, action)
+  def reduce(list, acc, action) when is_list(list) and is_function(action, 2), do: reducep(list, acc, action)
+
+  defp reducep([], acc, _), do: acc
+  defp reducep([h | t], acc, action), do: reducep(t, action.(h, acc), action)
+
 
 end
 
-#IO.puts "#{FibonacciReduce.fiboReduc(8)}"
+IO.puts "#{FibonacciReduce.fiboReduc([5])}"

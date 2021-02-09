@@ -95,3 +95,31 @@ iex(5)> list = [1,2,3,4,5]
 # [1, 2, 3, 4, 5]
 iex(121)> Enum.map(Enum.filter(list, &(rem(&1, 2) == 1)), &(3 * &1 + 1))
 # [4, 10, 16]
+
+#############################################03/02/2021##############################
+
+f = &(3 * &1 + 1)
+odd? = &(rem(&1,0) == 1)
+odd? = &(rem($1,2) == 1)
+odd?.(f.(4))
+# true
+odd?.(f.(5))
+# false
+ 5 |> f.() |> odd?.()
+#false
+g = &(&1 * &2 + 1)
+
+odd=.(f.(g.(5, 3)))
+# true
+5 |> g.(3) |> f.() |> odd?()
+# true
+5 |> IO.puts
+# 5
+#:ok
+
+'hello' |> IO.inspect(charlists: :as_lists)
+# numeros
+# 'hello'
+'hello' |> IO.inspect()
+# 'hello'
+# 'hello'
