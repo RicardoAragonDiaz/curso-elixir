@@ -1,0 +1,21 @@
+<div class="phx-hero">
+ <h2>Listing Posts</h2> 
+ <table>
+  <tr> 
+    <th> TITLE </th>
+    <th> CONTENT </th>
+    <th> STATUS </th> 
+  </tr>
+  <%= for post <- @lists do %>
+    <tr> 
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <%= if post.status == 1 do%>
+        <td><label style="color: blue;" >ACTIVO</label></td>
+      <% else %>
+        <td><label style="color: red;" >INACTIVO</label></td>
+      <% end %>
+    </tr>
+  <% end %>
+ </table>
+</div>    

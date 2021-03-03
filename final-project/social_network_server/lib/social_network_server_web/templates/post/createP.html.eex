@@ -1,0 +1,15 @@
+<div class="phx-hero">
+<%= form_for @changeset, Routes.post_path(@conn, :create), fn f -> %>
+  <h2>CREATE POST</h2>  
+  <label>  
+    Title: <%= text_input f, :title, placeholder: "Title" %>
+  </label> 
+  <label>  
+    Content: <%= text_input f, :content, placeholder: "Content" %>
+  </label> 
+ <label>
+    Status: <%= select f, :status, 1..2%>
+  </label>
+  <%= submit "Save" %> 
+<% end %> 
+</div>  

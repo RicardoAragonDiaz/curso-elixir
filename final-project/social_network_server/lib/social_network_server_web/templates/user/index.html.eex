@@ -1,0 +1,25 @@
+<div class="phx-hero">
+ <h2>Listing Users</h2> 
+ <table>
+  <tr>
+    <th> NAME </th>
+    <th> LASTNAME </th> 
+    <th> EMAIL </th>
+    <th> AGE </th>
+    <th> STATUS </th>
+  </tr>
+  <%= for user <- @users do %>
+    <tr> 
+      <td><%= user.name %></td>
+      <td><%= user.lastname %></td>
+      <td><%= user.email %></td>
+      <td><%= user.age %></td>
+      <%= if user.status == 1 do%>
+        <td><label style="color: blue;" >ACTIVO</label></td>
+      <% else %>
+        <td><label style="color: red;" >INACTIVO</label></td>
+      <% end %>
+    </tr>
+  <% end %>
+ </table>
+</div>    
