@@ -1,0 +1,8 @@
+<div class="phx-hero">
+ <h2>Hello World, from <%= @messenger %>!</h2>
+  <!--<%= link "Welcome Page!", to: Routes.root_hello_path(@conn, :index) %>
+  <br>
+  <%= Routes.root_hello_path(@conn, :index) %>  
+  <br> 
+  <%= Routes.root_hello_url(@conn, :index) %> -->        
+</div>

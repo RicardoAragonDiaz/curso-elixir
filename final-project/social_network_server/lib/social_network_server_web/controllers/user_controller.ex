@@ -9,8 +9,8 @@ defmodule SocialNetworkServerWeb.UserController do
   end
 
   def show(conn, params) do
-    #user = Repo.get(1)
-   render(conn, "show.html",params: params["id"])
+    user =  User |> Repo.get(params["id"])
+    render(conn, "show.html", name: user.name)
   end
 
   def new(conn, _params) do

@@ -16,7 +16,7 @@
 #
 
 IO.puts("------------------------------------")
-{:ok, subject} = Observable.create(0)
+{:ok, subject} = GServer.create(0)
 
 Observable.read(subject) |> IO.puts()
 Observable.attach(subject) |> IO.puts()

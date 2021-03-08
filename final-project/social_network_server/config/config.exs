@@ -10,8 +10,8 @@ use Mix.Config
 config :social_network_server, SocialNetworkServer.Repo,
   database: "social_network_server_repo",
   username: "postgres",
-  password: "123",
-  hostname: "localhost"
+  password: "1234",
+  hostname: "db"
 
 config :social_network_server,
   ecto_repos: [SocialNetworkServer.Repo]

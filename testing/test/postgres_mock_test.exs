@@ -2,6 +2,7 @@ defmodule PostgresMockTest do
   use ExUnit.Case
   doctest PostgresMock
 
+
   test "Creating a PostMock without pid " do
     db_handler = %PostgresMock{}
     assert db_handler.pid == nil

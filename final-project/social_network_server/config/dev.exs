@@ -2,10 +2,11 @@ use Mix.Config
 
 # Configure your database
 config :social_network_server, SocialNetworkServer.Repo,
-  username: "postgres",
-  password: "123",
-  database: "social_network_server_dev",
-  hostname: "localhost",
+  username: System.get_env("PGUSER") || "postgres",
+  password: System.get_env("PGPASSWORD") || "1234",
+  database: System.get_env("PGDATABASE") || "social_network_server_dev",
+  hostname: System.get_env("PGHOST"),
+  port: System.get_env("PGPORT") || "5432",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
